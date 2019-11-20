@@ -1,0 +1,43 @@
+\documentclass[aspectratio=169]{beamer}
+\usetheme[height=8mm]{Rochester}
+\usepackage[french]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[bibstyle=authoryear,
+style=authoryear,
+backend=bibtex]{biblatex}
+\addbibresource{bibliography.bib}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}{\vspace*{1mm}\hfill
+	\insertframenumber/\inserttotalframenumber\hfill\vspace*{1mm}}
+\AtBeginSection[]{
+	\begin{frame}[plain]
+	\vfill
+	\centering
+	\begin{beamercolorbox}[sep=8pt,center]{title}
+		\usebeamerfont{title}\insertsectionhead\par%
+	\end{beamercolorbox}
+	\vfill
+\end{frame}
+}
+
+\begin{document}
+\title{Most simple presentation}
+\author{John Doe $^{\alpha}$\\~\\
+\small{$^{\alpha}$ Some university}} 
+\date{18 novembre 2019} 
+\frame[plain]{\titlepage} 
+
+\begin{frame}{Frame title}
+\begin{exampleblock}{Block title}
+Hello world
+\end{exampleblock}
+\begin{block}{Block title}
+Hello world
+\end{block}
+\begin{alertblock}{Block title}
+Hello world
+\end{alertblock}
+A reference in a footnote \footfullcite{123}
+\end{frame}
+\end{document}
