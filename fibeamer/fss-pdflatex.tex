@@ -6,15 +6,18 @@
 %% conditions are required by law.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\documentclass{beamer}
-\usetheme[faculty=science, university=uu, logo=uu-logo]{fibeamer}
+\documentclass[aspectratio=169]{beamer}
+\usetheme[faculty=fss]{fibeamer}
 \usepackage[utf8]{inputenc}
 \usepackage[
-  main=english
-]{babel}
+  main=english, 
+]{babel}        
+
+%% These macros specify information about the presentation
 \title{Presentation Title} %% that will be typeset on the
 \subtitle{Presentation Subtitle} %% title page.
-\author{Pascal Cotret}
+\author{Author's Name}
+%% These additional packages are used within the document:
 \usepackage{ragged2e}  % `\justifying` text
 \usepackage{booktabs}  % Tables
 \usepackage{tabularx}
@@ -24,6 +27,7 @@
 \usepackage{url}       % `\url`s
 \usepackage{listings}  % Code listings
 \frenchspacing
+
 \begin{document}
   \frame{\maketitle}
 
@@ -333,4 +337,58 @@
       \end{thebibliography}
     \end{frame}
 
+  \section{Dark Frames}
+  \begin{darkframes}
+    \subsection{Blind Text}
+    \begin{frame}{Jabberwocky}
+      \framesubtitle{Lewis Carroll}%
+      \begin{tikzpicture}[overlay,remember picture]
+        \node[anchor=south east,xshift=-30pt,yshift=35pt]
+          at (current page.south east) {
+            \includegraphics[width=35mm]{resources/jabberwocky-dark}
+          };
+      \end{tikzpicture}%
+      'Twas brillig, and the slithy toves\\
+      Did gyre and gimble in the wabe;\\
+      All mimsy were the borogoves,\\
+      And the mome raths outgrabe.\\\bigskip
+
+      “Beware the Jabberwock, my son!\\
+      The jaws that bite, the claws that catch!\\
+      Beware the Jubjub bird, and shun\\
+      The frumious Bandersnatch!”\\
+    \end{frame}
+    \againframe{lists}
+    \subsection{Structuring Elements}
+    \againframe{simmonshall}
+    \againframe{proof}
+    \subsection{Numerals and Mathematics}
+    \againframe{math}
+    \subsection{Figures and Code Listings}
+    \againframe{figs1}
+    \againframe{figs2}
+    \defverbatim[colored]\sleepSort{
+      \begin{lstlisting}[language=C,tabsize=2]
+#include <stdio.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+
+// This is a comment
+int main(int argc, char **argv)
+{
+        while (--c > 1 && !fork());
+        sleep(c = atoi(v[c]));
+        printf("%d\n", c);
+        wait(0);
+        return 0;
+}
+    \end{lstlisting}}
+  \begin{frame}{Code listings}{An example source code in C}
+      \sleepSort
+    \end{frame}
+    \subsection{Citations and Bibliography}
+    \againframe{citations}
+    \againframe{bibliography}
+  \end{darkframes}
 \end{document}

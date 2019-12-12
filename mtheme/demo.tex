@@ -1,8 +1,12 @@
-\documentclass[10pt]{beamer}
+\documentclass[10pt,aspectratio=169]{beamer}
 
+% Pour les options http://mirrors.ibiblio.org/CTAN/macros/latex/contrib/beamer-contrib/themes/metropolis/doc/metropolistheme.pdf
 \usetheme[numbering=fraction,
 progressbar=frametitle,
+sectionpage=none,
+%background=dark,
 ]{metropolis}
+
 \usepackage{appendixnumberbeamer}
 
 \usepackage{booktabs}
@@ -19,6 +23,19 @@ progressbar=frametitle,
 \date{\today}
 \author{Pascal Cotret}
 \titlegraphic{\hfill\includegraphics[height=1.5cm]{logo.pdf}}
+
+\makeatletter
+\setlength{\metropolis@frametitle@padding}{1.6ex}% <- default 2.2 ex
+
+\setbeamertemplate{footline}{%
+	\begin{beamercolorbox}[wd=\textwidth, sep=1.5ex]{footline}% <- default 3ex
+		\usebeamerfont{page number in head/foot}%
+		\usebeamertemplate*{frame footer}
+		\hfill%
+		\usebeamertemplate*{frame numbering}
+	\end{beamercolorbox}%
+}
+\makeatother
 
 \begin{document}
 

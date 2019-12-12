@@ -97,7 +97,7 @@
     14\fibeamer@lengths@baseunit}
   \newlength\fibeamer@lengths@logoheight
   \setlength\fibeamer@lengths@logoheight{%
-    0.2\fibeamer@lengths@logowidth}
+    0.4\fibeamer@lengths@logowidth}
   \defbeamertemplate*{navigation symbols}{fibeamer}{}
   \defbeamertemplate*{headline}{fibeamer}{}
   \defbeamertemplate*{frametitle}{fibeamer}{%
@@ -111,14 +111,6 @@
       \insertframesubtitle}
   \defbeamertemplate*{footline}{fibeamer}{%
     \ifnum\c@framenumber=0\else%
-    
-        \begin{tikzpicture}[remember picture, overlay]
-            \node[anchor=north east,  opacity=0.1] at (current page.north east) {
-                \includegraphics[width=0.15\textwidth]{fibeamer/theme/uu/uu-watermark.png}
-            };
-        
-        \end{tikzpicture}
-    
       \begin{tikzpicture}[overlay]
         \node[anchor=south east,
           yshift=\fibeamer@lengths@footerpad,
@@ -133,19 +125,19 @@
     % This is slide 0
     \setcounter{framenumber}{0}
 
-%    % Input the university logo
-%    \begin{tikzpicture}[
-%      remember picture,
-%      overlay,
-%      xshift=1\fibeamer@lengths@logowidth,
-%      yshift=0.1\fibeamer@lengths@logoheight
-%    ]
-%      \node at (0,0) {
-%        \fibeamer@includeLogo[
-%          width=\fibeamer@lengths@logowidth,
-%          height=\fibeamer@lengths@logoheight
-%        ]};
-%    \end{tikzpicture}
+    % Input the university logo
+    \begin{tikzpicture}[
+      remember picture,
+      overlay,
+      xshift=0.5\fibeamer@lengths@logowidth,
+      yshift=0.5\fibeamer@lengths@logoheight
+    ]
+      \node at (0,0) {
+        \fibeamer@includeLogo[
+          width=\fibeamer@lengths@logowidth,
+          height=\fibeamer@lengths@logoheight
+        ]};
+    \end{tikzpicture}
 
     % Input the title
     \usebeamerfont{title}%
@@ -181,22 +173,7 @@
     \begin{minipage}{\textwidth}
       \raggedright%
       \insertauthor%
-    \end{minipage}
-
-    \begin{tikzpicture}[
-     % xshift=\fibeamer@lengths@logowidth,
-     % yshift=0.1\fibeamer@lengths@logoheight,
-      overlay
-    ]
-      \begin{scope}[shift={(current page.south east)}]
-      \node at (0,0) {
-        \fibeamer@includeLogo[
-          width=\fibeamer@lengths@logowidth,
-          height=\fibeamer@lengths@logoheight
-        ]};
-        \end{scope}
-    \end{tikzpicture}
-    }
+    \end{minipage}}
 
 \mode
 <all>

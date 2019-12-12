@@ -165,9 +165,9 @@ coltitle=white,center title}}
 \beamer@compresstrue
 \defbeamertemplate*{headline}{smoothbars theme}
 {
-\begin{beamercolorbox}[ht=2.125ex,dp=3.150ex]{section in head/foot}
-\insertnavigation{\paperwidth}
-\end{beamercolorbox}%
+%\begin{beamercolorbox}[ht=2.125ex,dp=3.150ex]{section in head/foot}
+%\insertnavigation{\paperwidth}
+%\end{beamercolorbox}%
 
 % Commenter les 4 lignes suivantes si vous ne voulez pas la barre des sous-sections.
 %\begin{beamercolorbox}[ht=2.125ex,dp=1.125ex,%
