@@ -1,7 +1,11 @@
 \documentclass{bredelebeamer}
 \title[Titre version courte]{Placez votre titre ici dans sa version longue}
 % Titre du diaporama
-
+\usepackage[sfdefault,light]{FiraSans}
+\usepackage[style=numeric,
+bibstyle=authoryear,
+backend=bibtex]{biblatex}
+\addbibresource{bibliography.bib}
 \subtitle{Vous pouvez ajouter un sous-titre}
 % Sous-titre optionnel
 
@@ -23,7 +27,7 @@
 \subject{Sujet de votre diaporama}
 % C'est utilisé dans les métadonnes du PDF
 
-\titlegraphic{\includegraphics[scale=0.5]{images/logo.png}
+\titlegraphic{\includegraphics[scale=0.2]{images/ensta-couleur}
 }
 
 \begin{document}
@@ -115,7 +119,7 @@ Orange  & 60.00   & 90.00   & 120.00
 \begin{itemize}
 \item Premier point
 \item Second point
-\item Troisième point
+\item Troisième point\footfullcite{Feynman1941}
 \end{itemize}
 \end{alertblock}
 \end{frame}
@@ -276,9 +280,12 @@ Orange  & 60.00   & 90.00   & 120.00   & 150.00   & 420.00
 \includegraphics[scale=0.5]{images/architecturebretonne_wikipedia.jpg}
 \caption{Éléments d'architecture bretonne typique du Sud de la France. (\href{http://commons.wikimedia.org/wiki/File:Colmar_-_Alsace.jpg}{Wikipédia.fr} CC-By-Sa)}
 \end{figure}
-
+\nocite{Feynman1941}
 \end{frame}
 
+\begin{frame}{Bibliographie}
+\printbibliography
+\end{frame}
 
 
 \end{document}

@@ -183,8 +183,8 @@ coltitle=white,center title}}
 {
 \leavevmode%
 \hbox{%
-\begin{beamercolorbox}[wd=\paperwidth,ht=2.25ex,dp=1ex,center]{date in head/foot}%
-\usebeamerfont{date in head/foot}\normalsize{\insertframenumber{} / \inserttotalframenumber}
+\begin{beamercolorbox}[wd=\paperwidth,ht=2.25ex,dp=1ex]{date in head/foot}%
+\usebeamerfont{date in head/foot}\normalsize{\hfill\insertframenumber{} / \inserttotalframenumber~~}
 \end{beamercolorbox}
 }%
 \vskip0pt%

@@ -6,9 +6,14 @@ progressbar=frametitle,
 sectionpage=none,
 %background=dark,
 ]{metropolis}
-
+% Another font
+\usepackage[sfdefault,light]{FiraSans}
 \usepackage{appendixnumberbeamer}
-
+\usepackage[style=numeric,
+bibstyle=authoryear,
+backend=bibtex]{biblatex}
+\addbibresource{bibliography.bib}
+\setbeamertemplate{bibliography item}{}
 \usepackage{booktabs}
 \usepackage[scale=2]{ccicons}
 
@@ -22,7 +27,7 @@ sectionpage=none,
 \subtitle{Subtitle}
 \date{\today}
 \author{Pascal Cotret}
-\titlegraphic{\hfill\includegraphics[height=1.5cm]{logo.pdf}}
+\titlegraphic{\hfill\includegraphics[height=1.5cm]{images/ensta-noir}}
 
 \makeatletter
 \setlength{\metropolis@frametitle@padding}{1.6ex}% <- default 2.2 ex
@@ -250,6 +255,7 @@ or show \textbf{bold} results.\end{verbatim}
       \end{exampleblock}
 
   \end{columns}
+
 \end{frame}
 \begin{frame}{Math}
   \begin{equation*}
@@ -295,7 +301,7 @@ or show \textbf{bold} results.\end{verbatim}
 \end{frame}
 \begin{frame}{Quotes}
   \begin{quote}
-    Veni, Vidi, Vici
+    Veni, Vidi, Vici\footfullcite{Feynman1941}
   \end{quote}
 \end{frame}
 
@@ -306,10 +312,6 @@ or show \textbf{bold} results.\end{verbatim}
     \begin{verbatim}\setbeamertemplate{frame footer}{My custom footer}\end{verbatim}
 \end{frame}
 }
-
-\begin{frame}{References}
-  Some references to showcase [allowframebreaks] \cite{knuth92,ConcreteMath,Simpson,Er01,greenwade93}
-\end{frame}
 
 \section{Conclusion}
 
@@ -344,11 +346,9 @@ or show \textbf{bold} results.\end{verbatim}
   slides in the appendix.
 \end{frame}
 
-\begin{frame}[allowframebreaks]{References}
-
-  \bibliography{demo}
-  \bibliographystyle{abbrv}
-
+\begin{frame}{Bibliographie}
+\printbibliography
 \end{frame}
+
 
 \end{document}
