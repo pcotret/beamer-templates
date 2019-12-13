@@ -6,14 +6,11 @@
 %% conditions are required by law.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\documentclass[aspectratio=169]{beamer}
-\usetheme[faculty=fss]{fibeamer}
+\documentclass{beamer}
+\usetheme[faculty=fsps,logo=resources/ensta]{fibeamer}
 \usepackage[utf8]{inputenc}
-\usepackage[
-  main=english, 
-]{babel}        
+\usepackage[main=english]{babel}        %% typeset as follows:
 
-%% These macros specify information about the presentation
 \title{Presentation Title} %% that will be typeset on the
 \subtitle{Presentation Subtitle} %% title page.
 \author{Author's Name}
@@ -22,15 +19,14 @@
 \usepackage{booktabs}  % Tables
 \usepackage{tabularx}
 \usepackage{tikz}      % Diagrams
+\usepackage{lipsum}
 \usetikzlibrary{calc, shapes, backgrounds}
 \usepackage{amsmath, amssymb}
 \usepackage{url}       % `\url`s
 \usepackage{listings}  % Code listings
 \frenchspacing
-
 \begin{document}
   \frame{\maketitle}
-
   \AtBeginSection[]{% Print an outline at the beginning of sections
     \begin{frame}<beamer>
       \frametitle{Outline for Section \thesection}
@@ -39,6 +35,14 @@
 
     \section{Light Frames}
     \subsection{Blind Text}
+    \begin{frame}{Trump ipsum example}
+    \justifying   
+    You’re disgusting. When other websites give you text, they’re not sending the best. They’re not sending you, they’re sending words that have lots of problems and they’re bringing those problems with us. They’re bringing mistakes. They’re bringing misspellings. They’re typists… And some, I assume, are good words.
+    
+    You know, it really doesn’t matter what you write as long as you’ve got a young, and beautiful, piece of text. Lorem Ipsum is FAKE TEXT! Be careful, or I will spill the beans on your placeholder text. Lorem Ipsum best not make any more threats to your website. It will be met with fire and fury like the world has never seen.
+    
+    You could see there was text coming out of her eyes, text coming out of her wherever. I don't think anybody knows it was Russia that wrote Lorem Ipsum, but I don't know, maybe it was. It could be Russia, but it could also be China. It could also be lots of other people. It also could be some wordsmith sitting on their bed that weights 400 pounds. Ok?
+	\end{frame}
     \begin{frame}{Jabberwocky}
       \framesubtitle{Lewis Carroll}%
       \begin{tikzpicture}[overlay,remember picture]
@@ -267,7 +271,7 @@
     \end{frame}
 
     \defverbatim[colored]\sleepSort{
-      \begin{lstlisting}[language=C,tabsize=2]
+      \begin{lstlisting}[language=C,tabsize=1]
   #include <stdio.h>
   #include <unistd.h>
   #include <sys/types.h>

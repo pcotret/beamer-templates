@@ -150,8 +150,8 @@
 \def\mubeamer@option@locale@logo {\mubeamer@option@locale}
 \def\mubeamer@option@locale@label{\mubeamer@option@locale}
 \def\mubeamer@pathname@base{mubeamer/}
-\def\mubeamer@pathname@logo {\mubeamer@pathname@base logo/}
-\def\mubeamer@pathname@label{\mubeamer@pathname@base label/}
+\def\mubeamer@pathname@logo {\mubeamer@pathname@base}
+\def\mubeamer@pathname@label{\mubeamer@pathname@base}
 \def\mubeamer@filename@logo{%
   \mubeamer@pathname@logo mubeamer-\mubeamer@option@workplace-%
     \mubeamer@option@locale@logo
@@ -269,17 +269,7 @@
 \setbeamertemplate{navigation symbols}{}
 \setbeamertemplate{footline}{%
   \hskip\mubeamer@length@margin
-  \usebeamercolor[fg]{author in head/foot}%
-    \usebeamerfont{author in head/foot}\insertshortauthor
-  \usebeamercolor[fg]{structure}%
-    \usebeamerfont{structure}\ \lower2pt\hbox{\Large$\cdot$}\
-  \usebeamercolor[fg]{title in head/foot}%
-    \usebeamerfont{title in head/foot}\insertshorttitle
-  \usebeamercolor[fg]{structure}%
-    \usebeamerfont{structure}\ \lower2pt\hbox{\Large$\cdot$}\
-  \usebeamercolor[fg]{date in head/foot}%
-    \usebeamerfont{date in head/foot}\insertshortdate\hfill
-  \usebeamercolor[fg]{page number in head/foot}
+\hfill\usebeamercolor[fg]{page number in head/foot}
     \usebeamerfont{author in head/foot}\insertframenumber\ /
     \inserttotalframenumber
   \hskip\mubeamer@length@margin
@@ -311,19 +301,10 @@
 \setbeamertemplate{itemize items}[square]
 \setbeamertemplate{blocks}[shadow=false]
 \AtEndDocument{%
-  \begingroup
-  \setbeamercolor{background canvas}{bg=mubeamer@label}
-  \begin{frame}[plain]
-  \vfill
-  \centering
-  \mubeamer@subroutine@includegraphics%
-    [width=\textwidth]%
-    {\mubeamer@filename@label}%
-    {\mubeamer@filename@label@fallback}%
-    {\mubeamer@filename@label@lastresort}%
-  \vfill
-  \end{frame}
-  \endgroup}
+\begin{frame}[plain]
+\maketitle
+\end{frame}
+}
 \setbeamerfont{structure}{series=\mdseries}
 \setbeamercolor{structure}{fg=mubeamer@base}
 

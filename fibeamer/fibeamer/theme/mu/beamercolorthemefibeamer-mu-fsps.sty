@@ -1,10 +1,10 @@
 %%
-%% This is file `beamercolorthemefibeamer-mu-fss.sty',
+%% This is file `beamercolorthemefibeamer-mu-fsps.sty',
 %% generated with the docstrip utility.
 %%
 %% The original source files were:
 %%
-%% fss.dtx 
+%% fsps.dtx 
 %% 
 %% Copyright 2015  Vít Novotný <witiko@mail.muni.cz>
 %% Faculty of Informatics, Masaryk University (Brno, Czech Republic)
@@ -52,55 +52,56 @@
 %% 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{fibeamer/theme/mu/%
-  beamercolorthemefibeamer-mu-fss}[2016/05/06]
+  beamercolorthemefibeamer-mu-fsps}[2016/05/06]
 \mode<presentation>
   \definecolor{fibeamer@black}{HTML}{000000}
   \definecolor{fibeamer@white}{HTML}{FFFFFF}
-  \definecolor{fibeamer@cyan}{HTML}{00796E}
-  \colorlet{fibeamer@darkCyan}{fibeamer@cyan!70!fibeamer@black}
-  \colorlet{fibeamer@lightCyan}{fibeamer@cyan!30!fibeamer@white}
+  \definecolor{fibeamer@blue}{HTML}{283889}
+  \colorlet{fibeamer@darkBlue}{fibeamer@blue!60!fibeamer@black}
+  \definecolor{fibeamer@brightBlue}{HTML}{3998F9}
+  \colorlet{fibeamer@lightBlue}{fibeamer@blue!30!fibeamer@white}
   \definecolor{fibeamer@gray}{HTML}{999999}
   \definecolor{fibeamer@lightOrange}{HTML}{FFA25E}
-  \colorlet{fibeamer@orange}{fibeamer@lightOrange!80!fibeamer@darkCyan}
+  \colorlet{fibeamer@orange}{fibeamer@lightOrange!80!fibeamer@darkBlue}
   %% Background gradients
-  \colorlet{fibeamer@dark@backgroundInner}{fibeamer@darkCyan}
-  \colorlet{fibeamer@dark@backgroundOuter}{fibeamer@darkCyan}
+  \colorlet{fibeamer@dark@backgroundInner}{fibeamer@darkBlue}
+  \colorlet{fibeamer@dark@backgroundOuter}{fibeamer@darkBlue}
   \colorlet{fibeamer@light@backgroundInner}{fibeamer@white}
   \colorlet{fibeamer@light@backgroundOuter}{fibeamer@white}
   \renewenvironment{darkframes}{%
     \begingroup
       \fibeamer@darktrue
       %% Structures
-      \setbeamercolor*{frametitle}{fg=fibeamer@lightCyan}
+      \setbeamercolor*{frametitle}{fg=fibeamer@blue!30!fibeamer@white}
       \setbeamercolor*{framesubtitle}{fg=fibeamer@white}
       %% Text
-      \setbeamercolor*{normal text}{fg=fibeamer@white, bg=fibeamer@cyan}
-      \setbeamercolor*{structure}{fg=fibeamer@white, bg=fibeamer@cyan}
+      \setbeamercolor*{normal text}{fg=fibeamer@white, bg=fibeamer@blue}
+      \setbeamercolor*{structure}{fg=fibeamer@white, bg=fibeamer@blue}
       \setbeamercolor*{alerted text}{fg=fibeamer@lightOrange}
       %% Items, footnotes and links
-      \setbeamercolor{item}{fg=fibeamer@lightCyan}
-      \setbeamercolor{footnote mark}{fg=fibeamer@lightCyan}
-      \hypersetup{urlcolor=fibeamer@lightCyan}
+      \setbeamercolor*{item}{fg=fibeamer@lightBlue}
+      \setbeamercolor*{footnote mark}{fg=fibeamer@lightBlue}
+      \hypersetup{urlcolor=fibeamer@lightBlue}
       %% Blocks
       \setbeamercolor*{block title}{%
-        fg=fibeamer@white, bg=fibeamer@cyan!60!fibeamer@white}
+        fg=fibeamer@white, bg=fibeamer@blue!60!fibeamer@white}
       \setbeamercolor*{block title example}{%
-        fg=fibeamer@white, bg=fibeamer@cyan!60!fibeamer@white}
+        fg=fibeamer@white, bg=fibeamer@blue!60!fibeamer@white}
       \setbeamercolor*{block title alerted}{%
-        fg=fibeamer@darkCyan, bg=fibeamer@lightOrange}
+        fg=fibeamer@darkBlue, bg=fibeamer@lightOrange}
       \setbeamercolor*{block body}{%
-        fg=fibeamer@cyan,
+        fg=fibeamer@blue,
         bg=fibeamer@gray!15!fibeamer@white}
       \usebeamercolor*{normal text}
       % Code listings
       \lstset{%
         commentstyle=\color{green!30!fibeamer@white},
-        keywordstyle=\color{blue!30!fibeamer@white},
+        keywordstyle=\color{blue!40!fibeamer@brightBlue!25!fibeamer@white},
         stringstyle=\color{red!30!fibeamer@white}}
       }{%
     \endgroup}
   %% Structures
-  \setbeamercolor{frametitle}{fg=fibeamer@cyan}
+  \setbeamercolor{frametitle}{fg=fibeamer@blue}
   \setbeamercolor{framesubtitle}{fg=fibeamer@black!75!fibeamer@white}
   %% Text
   \setbeamercolor{normal text}{fg=fibeamer@black, bg=fibeamer@white}
@@ -111,20 +112,20 @@
       \setbeamercolor{alerted text}{fg=fibeamer@orange}%
     \fi}{}
   %% Items, footnotes and links
-  \setbeamercolor{item}{fg=fibeamer@cyan}
-  \setbeamercolor{footnote mark}{fg=fibeamer@cyan}
-  \hypersetup{urlcolor=fibeamer@cyan}
+  \setbeamercolor{item}{fg=fibeamer@blue}
+  \setbeamercolor{footnote mark}{fg=fibeamer@blue}
+  \hypersetup{urlcolor=fibeamer@blue}
   %% Blocks
   \setbeamercolor{block title}{%
-    fg=fibeamer@white, bg=fibeamer@cyan}
+    fg=fibeamer@white, bg=fibeamer@blue}
   \setbeamercolor{block title example}{%
-    fg=fibeamer@white, bg=fibeamer@cyan}
+    fg=fibeamer@white, bg=fibeamer@blue}
   \setbeamercolor{block title alerted}{%
     fg=fibeamer@white, bg=red}
   \setbeamercolor{block body}{%
-    fg=fibeamer@cyan, bg=fibeamer@gray!20!fibeamer@white}
+    fg=fibeamer@blue, bg=fibeamer@gray!20!fibeamer@white}
   %% Title
-  \setbeamercolor{title}{fg=fibeamer@white, bg=fibeamer@cyan}
+  \setbeamercolor{title}{fg=fibeamer@white, bg=fibeamer@blue}
   % Code listings
   \lstset{%
     basicstyle=\footnotesize\ttfamily,
@@ -132,7 +133,7 @@
     breaklines=true,
     commentstyle=\color{green!60!fibeamer@black},
     extendedchars=true,
-    keywordstyle=\color{blue},
+    keywordstyle=\color{fibeamer@brightBlue!50!fibeamer@blue},
     showspaces=false,
     showstringspaces=false,
     showtabs=false,
@@ -141,4 +142,4 @@
 <all>
 \endinput
 %%
-%% End of file `beamercolorthemefibeamer-mu-fss.sty'.
+%% End of file `beamercolorthemefibeamer-mu-fsps.sty'.
