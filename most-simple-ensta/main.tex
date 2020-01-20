@@ -1,0 +1,73 @@
+\documentclass[aspectratio=169]{beamer}
+\usetheme[height=8mm]{Rochester}
+\usepackage[french]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+%\usepackage[sfdefault,light]{FiraSans}
+\usepackage[style=numeric,
+bibstyle=authoryear,
+backend=bibtex]{biblatex}
+\addbibresource{bibliography.bib}
+\definecolor{blue-ensta}{RGB}{53,192,199}
+\setbeamercolor*{frametitle}{bg=blue-ensta,fg=white}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}{\vspace*{1mm}\hfill
+	\large\textcolor{white}{\insertframenumber/\inserttotalframenumber}\hfill\vspace*{1mm}}
+\AtBeginSection[]{
+	\begin{frame}[plain]
+	\vfill
+	\centering
+	\begin{beamercolorbox}[sep=8pt,center]{title}
+		\usebeamerfont{title}\insertsectionhead\par%
+	\end{beamercolorbox}
+	\vfill
+\end{frame}
+}
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{./images/ensta2.png}}
+\makeatletter
+\setbeamertemplate{title page}{%
+	\vbox{}
+	\vskip3cm%<- added
+	\begingroup
+	%\centering
+		\textcolor{white}{\usebeamerfont{title}\inserttitle}\par%
+		\ifx\insertsubtitle\@empty%
+		\else%
+		\vskip0.25em%
+		{\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+		\fi%     
+	\vskip1.5em
+	\begin{beamercolorbox}[sep=8pt,center]{author}
+		\textcolor{white}{\usebeamerfont{author}\insertauthor, \usebeamerfont{author}\insertinstitute - \usebeamerfont{date}\insertdate}
+	\end{beamercolorbox}
+	\endgroup
+}
+\makeatother
+\title{Most simple presentation}
+\author{John Doe} 
+\institute{ENSTA Bretagne}
+\date{18 novembre 2019}
+\begin{document}
+{
+	\usebackgroundtemplate{\includegraphics[width=\paperwidth]{images/ensta1.png}}%
+	\begin{frame}[plain]
+	\maketitle
+	\end{frame}
+}
+
+
+\begin{frame}{Frame title}
+\begin{exampleblock}{Block title}
+Hello world
+\end{exampleblock}
+\begin{block}{Block title}
+Hello world %\footfullcite{Feynman1941}
+\end{block}
+\begin{alertblock}{Block title}
+Hello world \cite{Feynman1941}
+\end{alertblock}
+\end{frame}
+\begin{frame}
+\printbibliography
+\end{frame}
+\end{document}
