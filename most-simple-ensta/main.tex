@@ -4,7 +4,8 @@
 \usepackage[french]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-%\usepackage[sfdefault,light]{FiraSans}
+\usepackage{tikz}
+\usepackage[sfdefault,light]{FiraSans}
 \usepackage[style=numeric,
 bibstyle=authoryear,
 backend=bibtex]{biblatex}
@@ -30,23 +31,30 @@ backend=bibtex]{biblatex}
 % Overall background
 \usebackgroundtemplate{\includegraphics[width=\paperwidth]{./images/ensta2.png}}
 \makeatletter
-% Title page
-\setbeamertemplate{title page}{%
-	\vbox{}
-	\vskip2.8cm% <- Décalage du titre
-	\begingroup
-	%\centering
-		\textcolor{white}{\usebeamerfont{title}\inserttitle}\par%
-		\ifx\insertsubtitle\@empty%
-		\else%
-		\vskip0.25em% <- Espace entre le titre et le sous-titre
-		{\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
-		\fi%     
-	\vskip.3cm% <- Espace titre/auteur
-	\begin{beamercolorbox}[sep=8pt,center]{author}
-		\textcolor{white}{\usebeamerfont{author}\insertauthor, \usebeamerfont{author}\insertinstitute~-~\usebeamerfont{date}\insertdate}
-	\end{beamercolorbox}
-	\endgroup
+\newenvironment{transbox-title}[1][blue-ensta]{
+	\begin{tikzpicture}
+	\node[text width=\paperwidth, fill opacity=.6, text opacity=1, fill=#1]\bgroup%
+}{\egroup;\end{tikzpicture}}
+\newenvironment{transbox-author}[1][orange!50]{
+	\begin{tikzpicture}
+	\node[text width=\paperwidth, fill opacity=.6, text opacity=1, fill=#1]\bgroup%
+}{\egroup;\end{tikzpicture}}
+\setbeamertemplate{title page}
+{
+	%\vbox{}
+	%\vfill
+	\begin{centering}
+		\begin{transbox-title}
+			\textcolor{white}{\inserttitle}
+		\end{transbox-title}
+		\begin{transbox-author}
+			\textcolor{black}{\usebeamerfont{author}\insertauthor~-~\insertinstitute, \insertdate}
+		\end{transbox-author}
+	\end{centering}
+	\vfill
+	\tikz[overlay,remember picture] 
+	\node[opacity=.6, at=(current page.south east),anchor=south east,inner sep=0pt] {
+		\includegraphics[width=.2\textwidth]{images/ensta-noir}};
 }
 \makeatother
 \title{Most simple presentation}
@@ -56,7 +64,7 @@ backend=bibtex]{biblatex}
 \date{\today}
 \begin{document}
 {
-	\usebackgroundtemplate{\includegraphics[width=\paperwidth]{images/ensta1.png}}%
+	\usebackgroundtemplate{\includegraphics[width=\paperwidth]{images/bg2}}%
 	\begin{frame}[plain]
 	\maketitle
 	\end{frame}
