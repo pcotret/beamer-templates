@@ -3,7 +3,24 @@
 \usepackage[french]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[sfdefault,light]{FiraSans}
+%\usepackage[sfdefault,light]{FiraSans}
+\usepackage{listings} 
+\usepackage{color}
+\usepackage{xcolor}
+\lstdefinestyle{customc}{
+	belowcaptionskip=1\baselineskip,
+	breaklines=true,
+	frame=L,
+	xleftmargin=\parindent,
+	language=C,
+	showstringspaces=false,
+	basicstyle=\footnotesize\ttfamily,
+	backgroundcolor = \color{lightgray!15},
+	keywordstyle=\bfseries\color{green!40!black},
+	commentstyle=\itshape\color{purple!40!black},
+	identifierstyle=\color{blue},
+	stringstyle=\color{orange},
+}
 \usepackage[style=numeric,
 bibstyle=authoryear,
 backend=bibtex]{biblatex}
@@ -42,5 +59,10 @@ Hello world \cite{Feynman1941}
 \end{frame}
 \begin{frame}
 \printbibliography
+\end{frame}
+\begin{frame}[fragile]{title}
+\begin{lstlisting}[style=customc]
+printf("hello world");
+\end{lstlisting}
 \end{frame}
 \end{document}
