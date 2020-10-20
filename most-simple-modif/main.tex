@@ -1,0 +1,69 @@
+\documentclass[aspectratio=169]{beamer}
+\usetheme[height=8mm]{Rochester}
+\usepackage[french]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+%\usepackage[sfdefault,light]{FiraSans}
+\renewcommand*\familydefault{\ttdefault} 
+\usepackage{listings} 
+\usepackage{color}
+\usepackage{xcolor}
+\lstdefinestyle{customc}{
+	belowcaptionskip=1\baselineskip,
+	breaklines=true,
+	frame=L,
+	xleftmargin=\parindent,
+	language=C,
+	showstringspaces=false,
+	basicstyle=\footnotesize\ttfamily,
+	backgroundcolor = \color{lightgray!15},
+	keywordstyle=\bfseries\color{green!40!black},
+	commentstyle=\itshape\color{purple!40!black},
+	identifierstyle=\color{blue},
+	stringstyle=\color{orange},
+}
+\usepackage[style=numeric,
+bibstyle=authoryear,
+backend=bibtex]{biblatex}
+\addbibresource{bibliography.bib}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}{\vspace*{1mm}\hfill
+	\insertframenumber/\inserttotalframenumber\hfill\vspace*{1mm}}
+\AtBeginSection[]{
+	\begin{frame}[plain]
+	\vfill
+	\centering
+	\begin{beamercolorbox}[sep=8pt,center]{title}
+		\usebeamerfont{title}\insertsectionhead\par%
+	\end{beamercolorbox}
+	\vfill
+\end{frame}
+}
+
+\begin{document}
+\title{Most simple presentation}
+\author{John Doe $^{\alpha}$\\~\\
+\small{$^{\alpha}$ Some university}} 
+\date{18 novembre 2019\\~\\\includegraphics[width=.5\textwidth]{images/ensta-couleur}} 
+\frame[plain]{\titlepage} 
+
+\begin{frame}{Frame title}
+\begin{exampleblock}{Block title}
+Hello world
+\end{exampleblock}
+\begin{block}{Block title}
+Hello world \footfullcite{Feynman1941}
+\end{block}
+\begin{alertblock}{Block title}
+Hello world \cite{Feynman1941}
+\end{alertblock}
+\end{frame}
+\begin{frame}
+\printbibliography
+\end{frame}
+\begin{frame}[fragile]{title}
+\begin{lstlisting}[style=customc]
+printf("hello world");
+\end{lstlisting}
+\end{frame}
+\end{document}
