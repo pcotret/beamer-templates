@@ -20,7 +20,7 @@
 	language=Python,
 	showstringspaces=false,
 	basicstyle=\footnotesize\ttfamily,
-	backgroundcolor = \color{lightgray!15},
+	backgroundcolor = \color{lightgray!10},
 	keywordstyle=\bfseries\color{green!60!black},
 	commentstyle=\itshape\color{purple!40!black},
 	identifierstyle=\color{black},
@@ -65,15 +65,15 @@ backend=bibtex]{biblatex}
 	\end{frame}
 	\begin{frame}[fragile]{title}
 		\begin{lstlisting}[style=customc]
-		def __init__(self):
-		self.name="toto"
-		def my_function(fname):
-		print(fname + " Refsnes")
-		return fname
+def __init__(self):
+	self.name="toto"
+def my_function(fname):
+	print(fname + " Refsnes")
+	return fname
 		
-		my_function("Emil")
-		my_function("Tobias")
-		my_function("Linus") 
+my_function("Emil")
+my_function("Tobias")
+my_function("Linus") 
 		\end{lstlisting}
 	\end{frame}
 	\begin{frame}{Frame title}
