@@ -1,10 +1,12 @@
 \documentclass[aspectratio=169]{beamer}
-\usetheme[height=8mm]{Rochester}
+%\usetheme[height=8mm]{Rochester}
+\usetheme{Boadilla}
+\setbeamertemplate{blocks}[default]
 \usepackage[french]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-%\usepackage[sfdefault,light]{FiraSans}
-\renewcommand*\familydefault{\ttdefault} 
+\usepackage[sfdefault,light]{FiraSans}
+%\renewcommand*\familydefault{\ttdefault} 
 \usepackage{listings} 
 \usepackage{color}
 \usepackage{xcolor}
@@ -58,12 +60,20 @@ Hello world \footfullcite{Feynman1941}
 Hello world \cite{Feynman1941}
 \end{alertblock}
 \end{frame}
-\begin{frame}
-\printbibliography
-\end{frame}
 \begin{frame}[fragile]{title}
 \begin{lstlisting}[style=customc]
 printf("hello world");
 \end{lstlisting}
+\end{frame}
+\begin{frame}{Frame title}
+	\begin{itemize}
+		\item un
+		\item deux
+		\item trois
+		\item quatre
+	\end{itemize}
+\end{frame}
+\begin{frame}{Références}
+\printbibliography
 \end{frame}
 \end{document}
