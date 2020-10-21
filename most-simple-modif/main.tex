@@ -13,16 +13,18 @@
 \lstdefinestyle{customc}{
 	belowcaptionskip=1\baselineskip,
 	breaklines=true,
+	tabsize=2,
 	frame=L,
 	xleftmargin=\parindent,
-	language=C,
+	language=Python,
 	showstringspaces=false,
 	basicstyle=\footnotesize\ttfamily,
 	backgroundcolor = \color{lightgray!15},
-	keywordstyle=\bfseries\color{green!40!black},
+	keywordstyle=\bfseries\color{green!60!black},
 	commentstyle=\itshape\color{purple!40!black},
-	identifierstyle=\color{blue},
+	identifierstyle=\color{black},
 	stringstyle=\color{orange},
+	morekeywords={self}
 }
 \usepackage[style=numeric,
 bibstyle=authoryear,
@@ -62,7 +64,15 @@ Hello world \cite{Feynman1941}
 \end{frame}
 \begin{frame}[fragile]{title}
 \begin{lstlisting}[style=customc]
-printf("hello world");
+def __init__(self):
+	self.name="toto"
+def my_function(fname):
+	print(fname + " Refsnes")
+	return fname
+
+my_function("Emil")
+my_function("Tobias")
+my_function("Linus") 
 \end{lstlisting}
 \end{frame}
 \begin{frame}{Frame title}
