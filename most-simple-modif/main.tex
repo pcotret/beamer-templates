@@ -1,7 +1,8 @@
 \documentclass[aspectratio=169]{beamer}
-%\usetheme[height=8mm]{Rochester}
 \usetheme{Boadilla}
 \setbeamertemplate{blocks}[default]
+\setbeamertemplate{itemize items}[default]
+\setbeamertemplate{enumerate items}[default]
 \usepackage[french]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -35,55 +36,60 @@ backend=bibtex]{biblatex}
 	\insertframenumber/\inserttotalframenumber\hfill\vspace*{1mm}}
 \AtBeginSection[]{
 	\begin{frame}[plain]
-	\vfill
-	\centering
-	\begin{beamercolorbox}[sep=8pt,center]{title}
-		\usebeamerfont{title}\insertsectionhead\par%
-	\end{beamercolorbox}
-	\vfill
-\end{frame}
+		\vfill
+		\centering
+		\begin{beamercolorbox}[sep=8pt,center]{title}
+			\usebeamerfont{title}\insertsectionhead\par%
+		\end{beamercolorbox}
+		\vfill
+	\end{frame}
 }
 
 \begin{document}
-\title{Most simple presentation}
-\author{John Doe $^{\alpha}$\\~\\
-\small{$^{\alpha}$ Some university}} 
-\date{18 novembre 2019\\~\\\includegraphics[width=.5\textwidth]{images/ensta-couleur}} 
-\frame[plain]{\titlepage} 
-
-\begin{frame}{Frame title}
-\begin{exampleblock}{Block title}
-Hello world
-\end{exampleblock}
-\begin{block}{Block title}
-Hello world \footfullcite{Feynman1941}
-\end{block}
-\begin{alertblock}{Block title}
-Hello world \cite{Feynman1941}
-\end{alertblock}
-\end{frame}
-\begin{frame}[fragile]{title}
-\begin{lstlisting}[style=customc]
-def __init__(self):
-	self.name="toto"
-def my_function(fname):
-	print(fname + " Refsnes")
-	return fname
-
-my_function("Emil")
-my_function("Tobias")
-my_function("Linus") 
-\end{lstlisting}
-\end{frame}
-\begin{frame}{Frame title}
-	\begin{itemize}
-		\item un
-		\item deux
-		\item trois
-		\item quatre
-	\end{itemize}
-\end{frame}
-\begin{frame}{Références}
-\printbibliography
-\end{frame}
+	\title{Most simple presentation}
+	\author{John Doe $^{\alpha}$\\~\\
+		\small{$^{\alpha}$ Some university}} 
+	\date{18 novembre 2019\\~\\\includegraphics[width=.5\textwidth]{images/ensta-couleur}} 
+	\frame[plain]{\titlepage} 
+	
+	\begin{frame}{Frame title}
+		\begin{exampleblock}{Block title}
+			Hello world
+		\end{exampleblock}
+		\begin{block}{Block title}
+			Hello world \footfullcite{Feynman1941}
+		\end{block}
+		\begin{alertblock}{Block title}
+			Hello world \cite{Feynman1941}
+		\end{alertblock}
+	\end{frame}
+	\begin{frame}[fragile]{title}
+		\begin{lstlisting}[style=customc]
+		def __init__(self):
+		self.name="toto"
+		def my_function(fname):
+		print(fname + " Refsnes")
+		return fname
+		
+		my_function("Emil")
+		my_function("Tobias")
+		my_function("Linus") 
+		\end{lstlisting}
+	\end{frame}
+	\begin{frame}{Frame title}
+		\begin{itemize}
+			\item un
+			\item deux
+			\item trois
+			\item quatre
+			\begin{enumerate}
+				\item one
+				\item two
+				\item three
+			\end{enumerate}
+		\end{itemize}
+	\end{frame}
+	\begin{frame}{Références}
+		\printbibliography
+	\end{frame}
 \end{document}
