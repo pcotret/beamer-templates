@@ -1,96 +1,25 @@
-\documentclass[aspectratio=169]{beamer}
-\usetheme{Boadilla}
-\setbeamertemplate{blocks}[default]
-\setbeamertemplate{itemize items}[default]
-\setbeamertemplate{enumerate items}[default]
-\usepackage[french]{babel}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage[sfdefault,light]{FiraSans}
-\setbeamercolor{background canvas}{bg=}
-%\renewcommand*\familydefault{\ttdefault} 
-\usepackage{listings} 
-\usepackage{color}
-\usepackage{xcolor}
-\lstdefinestyle{customc}{
-	belowcaptionskip=1\baselineskip,
-	breaklines=true,
-	tabsize=2,
-	frame=L,
-	xleftmargin=\parindent,
-	language=Python,
-	showstringspaces=false,
-	basicstyle=\footnotesize\ttfamily,
-	backgroundcolor = \color{lightgray!10},
-	keywordstyle=\bfseries\color{green!60!black},
-	commentstyle=\itshape\color{purple!40!black},
-	identifierstyle=\color{black},
-	stringstyle=\color{orange},
-	morekeywords={self}
-}
-\usepackage[style=numeric,
-bibstyle=authoryear,
-backend=bibtex]{biblatex}
-\addbibresource{bibliography.bib}
-\setbeamertemplate{navigation symbols}{}
-\setbeamertemplate{footline}{\vspace*{1mm}\hfill
-	\insertframenumber/\inserttotalframenumber\hfill\vspace*{1mm}}
-\AtBeginSection[]{
-	\begin{frame}[plain]
-		\vfill
-		\centering
-		\begin{beamercolorbox}[sep=8pt,center]{title}
-			\usebeamerfont{title}\insertsectionhead\par%
-		\end{beamercolorbox}
-		\vfill
-	\end{frame}
-}
+\include{settings}
 
 \begin{document}
-	\title{Most simple presentation}
-	\author{John Doe $^{\alpha}$\\~\\
-		\small{$^{\alpha}$ Some university}} 
-	\date{18 novembre 2019\\~\\\includegraphics[width=.5\textwidth]{images/ensta-couleur}} 
-	\frame[plain]{\titlepage} 
+\frame[plain]{\titlepage} 
 	
-	\begin{frame}{Frame title}
-		\begin{exampleblock}{Block title}
-			Hello world
-		\end{exampleblock}
-		\begin{block}{Block title}
-			Hello world \footfullcite{Feynman1941}
-		\end{block}
-		\begin{alertblock}{Block title}
-			Hello world \cite{Feynman1941}
-		\end{alertblock}
-	\end{frame}
-	\begin{frame}[fragile]{title}
-		\begin{lstlisting}[style=customc]
-def __init__(self):
-	self.name="toto"
-def my_function(fname):
-	print(fname + " Refsnes")
-	return fname
-		
-my_function("Emil")
-my_function("Tobias")
-my_function("Linus") 
-		\end{lstlisting}
-	\end{frame}
-	\begin{frame}{Frame title}
-		\begin{itemize}
-			\item un
-			\item deux
-			\item trois
-			\item quatre
-			\begin{enumerate}
-				\item one
-				\item two
-				\item three
-			\end{enumerate}
-		\end{itemize}
-	\end{frame}
-	\begin{frame}{Références}
-		\printbibliography
-	\end{frame}
+\begin{frame}{title}
+\begin{itemize}
+	\item \code{code}\cite{Feynman1941}
+	\item \codelink{codelink}\footfullcite{Arias2020}
+	\item \codeword{codework}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{}
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=.5\textwidth]{alsace}
+\caption{Maison colmarienne}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Références}
+\printbibliography
+\end{frame}
 \end{document}

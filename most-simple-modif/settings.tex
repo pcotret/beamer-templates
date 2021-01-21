@@ -1,0 +1,74 @@
+\documentclass[aspectratio=169,12pt]{beamer}
+\usetheme{Boadilla}
+\setbeamertemplate{blocks}[default]
+\setbeamertemplate{itemize items}[default]
+\setbeamertemplate{enumerate items}[default]
+\usepackage[french]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\setbeamercolor{background canvas}{bg=}
+\usepackage[sfdefault,light]{FiraSans}
+\usepackage{listings} 
+\usepackage{color}
+\usepackage{xcolor}
+\graphicspath{{images/}}
+\lstdefinestyle{custompython}{
+	belowcaptionskip=1\baselineskip,
+	breaklines=true,
+	tabsize=2,
+	frame=l,
+	%numbers=left,
+	%numberstyle=\ttfamily,
+	xleftmargin=\parindent,
+	language=Python,
+	showstringspaces=false,
+	basicstyle=\footnotesize\ttfamily,
+	backgroundcolor = \color{lightgray!10},
+	keywordstyle=\bfseries\color{blue!80!black},
+	commentstyle=\color{green!60!black},
+	identifierstyle=\color{black},
+	stringstyle=\color{orange},
+	morekeywords={self}
+}
+\usepackage[style=numeric,
+bibstyle=authoryear,
+backend=bibtex]{biblatex}
+\addbibresource{bibliography.bib}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}{\vspace*{1mm}\hfill
+	\insertframenumber/\inserttotalframenumber\hfill\vspace*{1mm}}
+\AtBeginSection[]{
+	\begin{frame}[plain]
+		\vfill
+		\centering
+		\begin{beamercolorbox}[sep=8pt,center]{title}
+			\usebeamerfont{title}\insertsectionhead\par%
+		\end{beamercolorbox}
+		\vfill
+	\end{frame}
+}
+
+% Define the "Bootlin blue" color
+\definecolor{feblue}{rgb}{0.7980,0.7980,1.0}
+\setbeamercolor*{palette primary}{bg=feblue}
+\definecolor{fecode}{rgb}{0.5,0.5,0.5}
+\setbeamercolor{code}{fg=fecode}
+\definecolor{fedarkblue}{rgb}{0.25,0.25,0.75}
+\setbeamercolor{darkblue}{fg=fedarkblue}
+\hypersetup{colorlinks,linkcolor=,urlcolor=fedarkblue}
+
+% Custom Bootlin commands
+\newcommand{\code}[1]{{\usebeamercolor[fg]{code} \tt{#1}}}
+\newcommand{\codelink}[1]{{\usebeamercolor[fg]{darkblue} \path{#1}}}
+\newcommand{\codeword}[1]{\texttt{\textcolor{fedarkblue}{#1}}}
+
+\newcommand\go{``}
+\newcommand\gf{''}
+\newcommand{\guille}[1]{\go#1\gf}
+
+% Main stuff
+\title{Most simple presentation}
+\author{Pascal Cotret $^{\alpha}$\\~\\
+\texttt{\href{https://twitter.com/Pa0x73cal}{@Pa0x73cal}} + \url{https://pcotret.github.io}\\
+\small{$^{\alpha}$ ENSTA Bretagne}} 
+\date{\today\\\includegraphics[width=.4\textwidth]{ensta-couleur}}
