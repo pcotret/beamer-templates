@@ -11,6 +11,31 @@
 \end{itemize}
 \end{frame}
 
+\begin{frame}{title}
+\begin{block}{block}
+	content
+\end{block}
+\begin{exampleblock}{exampleblock}
+content
+\end{exampleblock}
+\begin{alertblock}{alertblock}
+content
+\end{alertblock}
+\end{frame}
+
+\begin{frame}[fragile]{Example of embedded code}
+\begin{lstlisting}[style=customc]
+int fib(int n){
+  if (n < 2)
+    return n;
+  else
+    return fib(n-1) + fib(n-2);
+}
+// Print Fibonacci value
+printf("%d\n", fib(10));
+\end{lstlisting}
+\end{frame}
+
 \begin{frame}{}
 \begin{figure}[htbp]
 \centering

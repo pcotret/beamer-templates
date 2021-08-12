@@ -11,24 +11,49 @@
 \usepackage{listings} 
 \usepackage{color}
 \usepackage{xcolor}
+\definecolor{commentcolor}{RGB}{170,170,170}
+\definecolor{identifiercolor}{RGB}{170,55,49}
+\definecolor{keywordcolor}{RGB}{75,105,198}
+\definecolor{stringscolor}{RGB}{156,93,39}
+
 \graphicspath{{images/}}
 \lstdefinestyle{custompython}{
 	belowcaptionskip=1\baselineskip,
 	breaklines=true,
 	tabsize=2,
 	frame=l,
-	%numbers=left,
-	%numberstyle=\ttfamily,
-	xleftmargin=\parindent,
+	%xleftmargin=\parindent,
 	language=Python,
+	numbers=left,
+	numbersep=.15cm,
+	numberstyle=\footnotesize\ttfamily,
+	numberblanklines=true,
 	showstringspaces=false,
 	basicstyle=\footnotesize\ttfamily,
-	backgroundcolor = \color{lightgray!10},
-	keywordstyle=\bfseries\color{blue!80!black},
-	commentstyle=\color{green!60!black},
-	identifierstyle=\color{black},
-	stringstyle=\color{orange},
+	%backgroundcolor = \color{lightgray!10},
+	keywordstyle=\bfseries\color{keywordcolor},
+	commentstyle=\itshape\color{commentcolor},
+	identifierstyle=\color{identifiercolor},
+	stringstyle=\color{stringscolor},
 	morekeywords={self}
+}
+\lstdefinestyle{customc}{
+	breaklines=true,
+	tabsize=2,
+	frame=lines,
+	%xleftmargin=\parindent,
+	language=C,
+	numbers=left,
+	numbersep=.15cm,
+	numberstyle=\footnotesize\ttfamily,
+	numberblanklines=true,
+	showstringspaces=false,
+	basicstyle=\footnotesize\ttfamily,
+	%backgroundcolor = \color{lightgray!10},
+	keywordstyle=\bfseries\color{keywordcolor},
+	commentstyle=\itshape\color{commentcolor},
+	identifierstyle=\color{identifiercolor},
+	stringstyle=\color{stringscolor},
 }
 \usepackage[style=numeric,
 bibstyle=authoryear,
