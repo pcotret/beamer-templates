@@ -3,6 +3,7 @@
 \setbeamertemplate{blocks}[default]
 \setbeamertemplate{itemize items}[default]
 \setbeamertemplate{enumerate items}[default]
+\setbeamertemplate{bibliography item}{\insertbiblabel}
 \usepackage[french]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -56,7 +57,7 @@
 	stringstyle=\color{stringscolor},
 }
 \usepackage[style=numeric,
-bibstyle=authoryear,
+bibstyle=numeric,
 backend=bibtex]{biblatex}
 \addbibresource{bibliography.bib}
 \setbeamertemplate{navigation symbols}{}

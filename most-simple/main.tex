@@ -3,6 +3,7 @@
 \usepackage[french]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\setbeamertemplate{bibliography item}{\insertbiblabel}
 %\usepackage[sfdefault,light]{FiraSans}
 \usepackage{listings} 
 \usepackage{color}
@@ -22,7 +23,7 @@
 	stringstyle=\color{orange},
 }
 \usepackage[style=numeric,
-bibstyle=authoryear,
+bibstyle=numeric,
 backend=bibtex]{biblatex}
 \addbibresource{bibliography.bib}
 \setbeamertemplate{navigation symbols}{}

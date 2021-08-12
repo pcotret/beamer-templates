@@ -1,13 +1,6 @@
 \documentclass{bredelebeamer}
 \title[Titre version courte]{Placez votre titre ici dans sa version longue}
-% Titre du diaporama
-\usepackage[sfdefault,light]{FiraSans}
-\usepackage[style=numeric,
-bibstyle=authoryear,
-backend=bibtex]{biblatex}
-\addbibresource{bibliography.bib}
 \subtitle{Vous pouvez ajouter un sous-titre}
-% Sous-titre optionnel
 
 \author{Marcel Dupont\inst{1}}
 % La commande \inst{...} Permet d'afficher l' affiliation de l'intervenant.
@@ -102,24 +95,19 @@ Orange  & 60.00   & 90.00   & 120.00
 \begin{block}{Bloc simple}
 \begin{itemize}
 \item Premier point
-\item Second point
-\item Troisième point
 \end{itemize}
 \end{block}
 
 \begin{exampleblock}{Bloc exemple}
 \begin{itemize}
 \item Premier point
-\item Second point
-\item Troisième point
 \end{itemize}
 \end{exampleblock}
 
 \begin{alertblock}{Bloc alert}
 \begin{itemize}
 \item Premier point
-\item Second point
-\item Troisième point\footfullcite{Feynman1941}
+\item Second point\footfullcite{Feynman1941}
 \end{itemize}
 \end{alertblock}
 \end{frame}
@@ -176,13 +164,23 @@ une boite grise
 \section{Les listes}
 	\subsection{Liste à item}
 
-\begin{frame}{Titre de la frame}
-
+\begin{frame}[fragile]{Titre de la frame}
 	\begin{itemize}
 		\item premier élément de liste,
 		\item deuxième élément de liste,
 		\item troisième élément de liste.
+		\item \codeword{et même un extrait de code!}
 	\end{itemize}
+\begin{lstlisting}[style=customc]
+int fib(int n){
+  if (n < 2)
+    return n;
+  else
+	return fib(n-1) + fib(n-2);
+}
+// Print Fibonacci value
+printf("%d\n", fib(10));
+\end{lstlisting}
 \end{frame} 
 
 		\subsection{Liste énumérative} 

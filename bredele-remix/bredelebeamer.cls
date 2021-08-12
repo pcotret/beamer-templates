@@ -10,20 +10,31 @@
 \ProvidesClass{Bredelebeamer}[17/02/2015, v1.0]
 
 \PassOptionsToPackage{svgnames}{xcolor}
-\LoadClass[compress,8pt,aspectratio=169]{beamer}
+\LoadClass[compress,10pt,aspectratio=169]{beamer}
 
 \usepackage[frenchb]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{helvet}
 \usepackage{pdfpages}
-\usepackage{graphicx}% http://ctan.org/pkg/graphicx
-\usepackage[footnotesize,hang]{caption} % réduire la taille des légendes des images
+\usepackage{graphicx}
+\graphicspath{{images/}}
+\usepackage[footnotesize,hang]{caption}
 \usepackage{hyperref}
 \usepackage{tikz}
+\usepackage{listings} 
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage[sfdefault,light]{FiraSans}
 
-%%%% Les Framacouleurs
+% Bibliography stuff
+\usepackage[style=numeric,
+bibstyle=numeric,
+backend=bibtex]{biblatex}
+\setbeamertemplate{bibliography item}{\insertbiblabel}
+\addbibresource{bibliography.bib}
 
+% Les couleurs
 \definecolor{Framableu}{RGB}{12,91,122}
 \definecolor{Framableulight}{RGB}{18,144,176}
 \definecolor{Framavert}{RGB}{142,156,72}
@@ -40,20 +51,74 @@
 \definecolor{Framamarronlight}{RGB}{215,204,200}
 \definecolor{Framagris}{RGB}{97,97,97}
 \definecolor{Framagrislight}{RGB}{245,245,245}
+\definecolor{commentcolor}{RGB}{170,170,170}
+\definecolor{identifiercolor}{RGB}{170,55,49}
+\definecolor{keywordcolor}{RGB}{75,105,198}
+\definecolor{stringscolor}{RGB}{156,93,39}
+\definecolor{feblue}{rgb}{0.7980,0.7980,1.0}
+\setbeamercolor*{palette primary}{bg=feblue}
+\definecolor{fecode}{rgb}{0.5,0.5,0.5}
+\setbeamercolor{code}{fg=fecode}
+\definecolor{fedarkblue}{rgb}{0.25,0.25,0.75}
+\setbeamercolor{darkblue}{fg=fedarkblue}
+\hypersetup{colorlinks,linkcolor=,urlcolor=fedarkblue}
 
+% Custom commands
+\newcommand{\code}[1]{{\usebeamercolor[fg]{code} \tt{#1}}}
+\newcommand{\codelink}[1]{{\usebeamercolor[fg]{darkblue} \path{#1}}}
+\newcommand{\codeword}[1]{\texttt{\textcolor{fedarkblue}{#1}}}
+\newcommand\go{``}
+\newcommand\gf{''}
+\newcommand{\guille}[1]{\go#1\gf}
 
+% Listings configuration
+\lstdefinestyle{custompython}{
+	belowcaptionskip=1\baselineskip,
+	breaklines=true,
+	tabsize=2,
+	frame=l,
+	%xleftmargin=\parindent,
+	language=Python,
+	numbers=left,
+	numbersep=.15cm,
+	numberstyle=\footnotesize\ttfamily,
+	numberblanklines=true,
+	showstringspaces=false,
+	basicstyle=\footnotesize\ttfamily,
+	%backgroundcolor = \color{lightgray!10},
+	keywordstyle=\bfseries\color{keywordcolor},
+	commentstyle=\itshape\color{commentcolor},
+	identifierstyle=\color{identifiercolor},
+	stringstyle=\color{stringscolor},
+	morekeywords={self}
+}
+\lstdefinestyle{customc}{
+	breaklines=true,
+	tabsize=2,
+	frame=lines,
+	%xleftmargin=\parindent,
+	language=C,
+	numbers=left,
+	numbersep=.15cm,
+	numberstyle=\footnotesize\ttfamily,
+	numberblanklines=true,
+	showstringspaces=false,
+	basicstyle=\footnotesize\ttfamily,
+	%backgroundcolor = \color{lightgray!10},
+	keywordstyle=\bfseries\color{keywordcolor},
+	commentstyle=\itshape\color{commentcolor},
+	identifierstyle=\color{identifiercolor},
+	stringstyle=\color{stringscolor},
+}
 
-%%%%%%%%%%%% Tableaux
+% Tableaux
 \usepackage{tcolorbox}
 \usepackage{tabularx}
 \usepackage{array}
 \usepackage{colortbl}
 \tcbuselibrary{skins}
 
-
-%%%% Merci : http://tex.stackexchange.com/questions/112343/beautiful-table-samples
-
-
+% Merci : http://tex.stackexchange.com/questions/112343/beautiful-table-samples
 \newcolumntype{Y}{>{\raggedleft\arraybackslash}X}
 
 \tcbset{tabrouge/.style={enhanced,arc=0em,fonttitle=\bfseries,fontupper=\normalsize\sffamily,
