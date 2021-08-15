@@ -3,7 +3,7 @@ BIB=bibliography
 all:
 	pdflatex $(MAIN).tex
 	bibtex $(MAIN)
-	bibtex $(MAIN)
+	pdflatex $(MAIN).tex
 	pdflatex $(MAIN).tex
 clean:
-	rm *.log *.nav *.out *.toc *.aux *.snm *.vrb *.bbl *.blg *.xml $(MAIN)-blx.bib
+	rm *.log *.nav *.out *.toc *.aux *.snm *.vrb *.bbl *.blg *.xml $(MAIN)-blx.bib $(MAIN).pdf

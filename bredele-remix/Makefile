@@ -6,4 +6,4 @@ all:
 	pdflatex $(MAIN).tex
 	pdflatex $(MAIN).tex
 clean:
-	rm *.log *.nav *.out *.toc *.aux *.snm *.vrb *.bbl *.blg *.xml $(MAIN)-blx.bib $(MAIN).pdf
+	rm *.log *.nav *.out *.toc *.aux *.snm *.vrb *.bbl *.blg *.xml $(MAIN)-blx.bib
