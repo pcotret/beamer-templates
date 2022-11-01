@@ -1,46 +1,87 @@
-\include{settings}
+\documentclass{beamer}
+\usetheme{Boadilla}
+\author{names}
+\title{text}
+\include{settings.tex}
+
+
 
 \begin{document}
 \frame[plain]{\titlepage} 
 
-\begin{frame}{Blindtext}
-\blindtext
+\begin{frame}{title}
+Adaptation partielle de \url{https://github.com/pcotret/latex-template}, lui-même forké de \url{https://github.com/zestedesavoir/latex-template}.
+\end{frame}
+
+	\begin{frame}[fragile]{Minted classique}
+\begin{minted}{python}
+import numpy as np
+	
+def incmatrix(genl1,genl2):
+	m = len(genl1)
+	n = len(genl2)
+	M = None #to become the incidence matrix
+	VT = np.zeros((n*m,1), int)  #dummy variable
+	return M
+\end{minted}
+	\end{frame}
+\begin{frame}[fragile]{Test CodeBlock}
+
+\begin{CodeBlock}{python}
+import numpy as np
+
+def incmatrix(genl1,genl2):
+	m = len(genl1)
+	n = len(genl2)
+	M = None #to become the incidence matrix
+	VT = np.zeros((n*m,1), int)  #dummy variable
+	return M
+\end{CodeBlock}
 \end{frame}
 
 \begin{frame}[allowframebreaks]{Boxes}
-\begin{Information}
-	\blindtext
-\end{Information}
-
-\begin{Question}
-	\blindtext
-\end{Question}
-
-\begin{Warning}
-	\blindtext
-\end{Warning}
-
-\begin{Error}
-	\blindtext
-\end{Error}
-
-\begin{Information}[Titre d'une information méga importante]
-	\blindtext
-\end{Information}
-
-\begin{Neutral}[Titre de mon bloc neutre]
-	Un bloc neutre, pour contenir un théorème ou une équation par exemple.
-\end{Neutral}
+	\begin{Information}
+		\blindtext
+	\end{Information}
+	
+	\begin{Question}
+		\blindtext
+	\end{Question}
+	
+	\begin{Warning}
+		\blindtext
+	\end{Warning}
+	
+	\begin{Error}
+		\blindtext
+	\end{Error}
+	
+	\begin{Information}[Titre d'une information méga importante]
+		\blindtext
+	\end{Information}
+	
+	\begin{Neutral}[Titre de mon bloc neutre]
+		Un bloc neutre, pour contenir un théorème ou une équation par exemple.
+	\end{Neutral}
 \end{frame}
 
-\begin{frame}{Image}
+\begin{frame}{Figure \& table}
 \begin{figure}[htbp]
-\centering
-\includegraphics[width=.4\textwidth]{alsace}
+	\centering
+	\includegraphics[width=.5\linewidth]{images/ensta-noir.png}
+	\caption{Légende}
 \end{figure}
-\end{frame}
 
-\begin{frame}{Code}
-Code en ligne: \CodeInline{print("hello world")}
+\begin{center}
+	\begin{tabular}{c c c c} 
+		\toprule
+		Col1 & Col2 & Col2 & Col3 \\\midrule 
+		1 & 6 & 87837 & 787 \\ 
+		2 & 7 & 78 & 5415 \\
+		3 & 545 & 778 & 7507 \\
+		4 & 545 & 18744 & 7560 \\
+		5 & 88 & 788 & 6344 \\\bottomrule
+	\end{tabular}
+\end{center}
 \end{frame}
 \end{document}

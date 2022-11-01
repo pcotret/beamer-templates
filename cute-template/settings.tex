@@ -1,5 +1,3 @@
-\documentclass[aspectratio=169,12pt]{beamer}
-\usetheme{Boadilla}
 \setbeamertemplate{blocks}[default]
 \setbeamertemplate{itemize items}[default]
 \setbeamertemplate{enumerate items}[default]
@@ -7,42 +5,19 @@
 \setbeamertemplate{navigation symbols}{}
 \setbeamertemplate{footline}{\vspace*{1mm}\hfill
 	\insertframenumber/\inserttotalframenumber\hfill\vspace*{1mm}}
-
-\graphicspath{{images/}}
-
-%%% PACKAGES
-\usepackage{fontspec}
+\usepackage{minted}
 \usepackage{blindtext}
-
-%% LATEX 3 PACKAGES
-\RequirePackage{etoolbox}
-\RequirePackage{xparse}
-\RequirePackage{soul}
-
-\RequirePackage{multicol}
-\RequirePackage{pagecolor}
-
-%%% GRAPHIC PACKAGES
+\usepackage{fontspec}
+\usepackage{booktabs}
+\setsansfont{Source Sans Pro}
+\setmonofont{Source Code Pro}
+\usepackage[skins, minted, breakable, xparse]{tcolorbox}
 \usepackage{graphicx}
-\usepackage[export]{adjustbox}
-\usepackage{epstopdf}
-\usepackage{geometry}
-\usepackage{grffile}
-\epstopdfDeclareGraphicsRule{.gif}{png}{.png}{convert gif:#1 png:\OutputFile}
-\AppendGraphicsExtensions{.gif}
-
-\epstopdfDeclareGraphicsRule{.svg}{pdf}{.pdf}{rsvg-convert -f pdf #1 -o \OutputFile}
-\AppendGraphicsExtensions{.svg}
+\graphicspath{{images/}}
 
 \usepackage{hyperref}
 \hypersetup{luatex,unicode,bookmarks=true,hyperindex=true,bookmarksopen=true,bookmarksnumbered=true}
 \usepackage[hyperrefcolorlinks]{menukeys}
-
-%%% FONTS
-\setsansfont{Source Sans Pro}
-\setmonofont{Source Code Pro}
-
-\usepackage[skins, minted, breakable, xparse]{tcolorbox}
 
 %%% COLORS
 
@@ -126,11 +101,6 @@
 
 \hypersetup{linkcolor=internalLinkColor}
 
-%%% CONSTANTS 
-
-\setlength{\tabcolsep}{0.2cm}
-\renewcommand{\arraystretch}{1.5}
-
 %%% ICONS ----------------------------------------------------------------------
 
 \def\boxIcon{[draw=none] circle (0.3cm)}
@@ -200,37 +170,19 @@
 \newBox{Error}{ZdSBoxBackgroundError}{ZdSBoxForegroundError}{ZdSBoxBorderError}{ZdSBoxLogoBackgroundError}[\times]
 \newBox{Neutral}{ZdSBoxBackgroundNeutral}{ZdSBoxForegroundNeutral}{ZdSBoxBorderNeutral}{ZdSBoxLogoBackgroundNeutral}
 
-%%% QUOTATION
-\DeclareTColorBox{Quotation}{ o }{%
-	blanker,
-	before skip=6pt,after skip=6pt,
-	borderline west={1mm}{0pt}{ZdSBoxBorderLeftQuotation},
-	coltext=ZdSBoxForegroundQuotation,
-	left=18pt,
-	IfValueTF={#1}{after upper={\par\center\textit{#1}}}{}
-}
-
-%%% CODE MANAGEMENT
-\tcbsetforeverylayer{} % Reset style
-
 \setminted{
 	breaklines,
 	breaksymbolleft=\hspace{2em},
 	highlightcolor=highlightCodeColor,
 	linenos,
-	fontsize=\small,
+	tabsize=2,
+	fontsize=\footnotesize,
 	baselinestretch=1,
 	breakanywhere=true
 }
 
-\renewcommand\theFancyVerbLine{%
-	\BeginAccSupp{ActualText={}}%
-	\small\textcolor{lineNumberCodeColor}{\arabic{FancyVerbLine}}%
-	\EndAccSupp{}%
-}
-
 \DeclareTCBListing{CodeBlock}{O{}O{}O{1}m}{%
-	enlarge top initially by=5mm,
+	enlarge top initially by=1mm,
 	enlarge bottom finally by=1mm,
 	boxrule=0.5pt,
 	breakable,
@@ -244,19 +196,11 @@
 	minted language=#4,
 	minted options={highlightlines={#2}, firstnumber=#3,numbersep=3mm},
 	enhanced,
-	overlay={\begin{tcbclipinterior}\fill[lineNumberSeparatorCodeColor] ([xshift=8mm-0.5pt]frame.south west)
-			rectangle ([xshift=8mm]frame.north west);\end{tcbclipinterior}},
-	left=8mm,
+	overlay={\begin{tcbclipinterior}\fill[lineNumberSeparatorCodeColor] ([xshift=4mm-0.5pt]frame.south west)
+			rectangle ([xshift=4mm]frame.north west);\end{tcbclipinterior}},
+	%left=8mm,
 	title=#1,
 	attach boxed title to bottom center,
 	boxed title style={empty,boxrule=0.5mm},
 	coltitle=defaultColor
 }
-
-\newcommand{\CodeInline}[1]{\texorpdfstring{\hl{\texttt{\small  #1}}}{#1}}
-
-
-% Main stuff
-\title{Most simple presentation}
-\author{Pascal Cotret} 
-\date{\today}
