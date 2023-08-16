@@ -216,7 +216,7 @@ coltitle=white,center title}}
 \setbeamercolor*{block title example}{fg=exampleBlockTitleTextColor,bg=exampleTitleBlockColor}
 \setbeamercolor*{block body example}{fg=exampleBlockTextColor,bg=exampleBlockColor}
 \setbeamerfont{block title}{size={}}
-\setbeamercolor{titlelike}{fg=titleTextColor,bg=titleColor}
+\setbeamercolor{titlelike}{fg=titleColor,bg=titleTextColor}
 \setbeamercolor*{normal text}{fg=normalTextColor,bg=bodyColor}
 \setbeamercolor*{example text}{fg=exampleTextColor}
 \setbeamercolor*{alerted text}{fg=alertTextColor}
