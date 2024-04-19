@@ -5,23 +5,12 @@
 \usepackage[T1]{fontenc}
 \setbeamertemplate{bibliography item}{\insertbiblabel}
 %\usepackage[sfdefault,light]{FiraSans}
-\usepackage{listings} 
+\usepackage{minted}
+\setminted[python]{xleftmargin=.5cm}
+\usemintedstyle{tango}
+\renewcommand{\theFancyVerbLine}{\ttfamily\scriptsize{\arabic{FancyVerbLine}}} 
 \usepackage{color}
 \usepackage{xcolor}
-\lstdefinestyle{customc}{
-	belowcaptionskip=1\baselineskip,
-	breaklines=true,
-	frame=L,
-	xleftmargin=\parindent,
-	language=C,
-	showstringspaces=false,
-	basicstyle=\footnotesize\ttfamily,
-	backgroundcolor = \color{lightgray!15},
-	keywordstyle=\bfseries\color{green!40!black},
-	commentstyle=\itshape\color{purple!40!black},
-	identifierstyle=\color{blue},
-	stringstyle=\color{orange},
-}
 \usepackage[style=numeric,
 bibstyle=numeric,
 backend=bibtex]{biblatex}
@@ -62,8 +51,15 @@ Hello world \cite{Feynman1941}
 \printbibliography
 \end{frame}
 \begin{frame}[fragile]{title}
-\begin{lstlisting}[style=customc]
+\begin{minted}[
+	frame=lines,
+	framesep=2mm,
+	bgcolor=lightgray!10,
+	fontsize=\footnotesize,
+	numbersep=6pt,
+	linenos
+	]{python}
 printf("hello world");
-\end{lstlisting}
+\end{minted}
 \end{frame}
 \end{document}

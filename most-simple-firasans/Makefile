@@ -1,9 +1,10 @@
 MAIN=main
 BIB=bibliography
 all:
-	pdflatex $(MAIN).tex
+	pdflatex -shell-escape $(MAIN).tex
 	bibtex $(MAIN)
-	pdflatex $(MAIN).tex
-	pdflatex $(MAIN).tex
+	pdflatex -shell-escape $(MAIN).tex
+	pdflatex -shell-escape $(MAIN).tex
 clean:
 	rm *.log *.nav *.out *.toc *.aux *.snm *.vrb *.bbl *.blg *.xml $(MAIN)-blx.bib $(MAIN).pdf
+	rm -rf _minted-main _minted-settings

@@ -71,45 +71,11 @@ backend=bibtex]{biblatex}
 \newcommand\gf{''}
 \newcommand{\guille}[1]{\go#1\gf}
 
-% Listings configuration
-\lstdefinestyle{custompython}{
-	belowcaptionskip=1\baselineskip,
-	breaklines=true,
-	tabsize=2,
-	frame=l,
-	%xleftmargin=\parindent,
-	language=Python,
-	numbers=left,
-	numbersep=.15cm,
-	numberstyle=\footnotesize\ttfamily,
-	numberblanklines=true,
-	showstringspaces=false,
-	basicstyle=\footnotesize\ttfamily,
-	%backgroundcolor = \color{lightgray!10},
-	keywordstyle=\bfseries\color{keywordcolor},
-	commentstyle=\itshape\color{commentcolor},
-	identifierstyle=\color{identifiercolor},
-	stringstyle=\color{stringscolor},
-	morekeywords={self}
-}
-\lstdefinestyle{customc}{
-	breaklines=true,
-	tabsize=2,
-	frame=lines,
-	%xleftmargin=\parindent,
-	language=C,
-	numbers=left,
-	numbersep=.15cm,
-	numberstyle=\footnotesize\ttfamily,
-	numberblanklines=true,
-	showstringspaces=false,
-	basicstyle=\footnotesize\ttfamily,
-	%backgroundcolor = \color{lightgray!10},
-	keywordstyle=\bfseries\color{keywordcolor},
-	commentstyle=\itshape\color{commentcolor},
-	identifierstyle=\color{identifiercolor},
-	stringstyle=\color{stringscolor},
-}
+% Code configuration
+\usepackage{minted}
+\setminted[python]{xleftmargin=.5cm}
+\usemintedstyle{tango}
+\renewcommand{\theFancyVerbLine}{\ttfamily\scriptsize{\arabic{FancyVerbLine}}} 
 
 % Tableaux
 \usepackage{tcolorbox}

@@ -171,7 +171,14 @@ une boite grise
 		\item troisième élément de liste.
 		\item \codeword{et même un extrait de code!}
 	\end{itemize}
-\begin{lstlisting}[style=customc]
+	\begin{minted}[
+		frame=lines,
+		framesep=2mm,
+		bgcolor=lightgray!10,
+		fontsize=\footnotesize,
+		numbersep=6pt,
+		linenos
+		]{c}
 int fib(int n){
   if (n < 2)
     return n;
@@ -180,7 +187,7 @@ int fib(int n){
 }
 // Print Fibonacci value
 printf("%d\n", fib(10));
-\end{lstlisting}
+\end{minted}
 \end{frame} 
 
 		\subsection{Liste énumérative} 

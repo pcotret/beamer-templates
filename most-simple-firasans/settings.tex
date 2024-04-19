@@ -9,7 +9,10 @@
 \usepackage[T1]{fontenc}
 \setbeamercolor{background canvas}{bg=}
 \usepackage[sfdefault,light]{FiraSans}
-\usepackage{listings} 
+\usepackage{minted}
+\setminted[python]{xleftmargin=.5cm}
+\usemintedstyle{tango}
+\renewcommand{\theFancyVerbLine}{\ttfamily\scriptsize{\arabic{FancyVerbLine}}} 
 \usepackage{color}
 \usepackage{xcolor}
 \definecolor{commentcolor}{RGB}{170,170,170}
@@ -18,44 +21,6 @@
 \definecolor{stringscolor}{RGB}{156,93,39}
 
 \graphicspath{{images/}}
-\lstdefinestyle{custompython}{
-	belowcaptionskip=1\baselineskip,
-	breaklines=true,
-	tabsize=2,
-	frame=l,
-	%xleftmargin=\parindent,
-	language=Python,
-	numbers=left,
-	numbersep=.15cm,
-	numberstyle=\footnotesize\ttfamily,
-	numberblanklines=true,
-	showstringspaces=false,
-	basicstyle=\footnotesize\ttfamily,
-	%backgroundcolor = \color{lightgray!10},
-	keywordstyle=\bfseries\color{keywordcolor},
-	commentstyle=\itshape\color{commentcolor},
-	identifierstyle=\color{identifiercolor},
-	stringstyle=\color{stringscolor},
-	morekeywords={self}
-}
-\lstdefinestyle{customc}{
-	breaklines=true,
-	tabsize=2,
-	frame=lines,
-	%xleftmargin=\parindent,
-	language=C,
-	numbers=left,
-	numbersep=.15cm,
-	numberstyle=\footnotesize\ttfamily,
-	numberblanklines=true,
-	showstringspaces=false,
-	basicstyle=\footnotesize\ttfamily,
-	%backgroundcolor = \color{lightgray!10},
-	keywordstyle=\bfseries\color{keywordcolor},
-	commentstyle=\itshape\color{commentcolor},
-	identifierstyle=\color{identifiercolor},
-	stringstyle=\color{stringscolor},
-}
 \usepackage[style=numeric,
 bibstyle=numeric,
 backend=bibtex]{biblatex}
