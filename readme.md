@@ -1,0 +1,1 @@
+Some beamer templates I used when I need them for teaching or research purposes.
