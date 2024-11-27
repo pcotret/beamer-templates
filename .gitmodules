@@ -1,0 +1,3 @@
+[submodule "moloch"]
+	path = moloch
+	url = git@github.com:pcotret/moloch.git
